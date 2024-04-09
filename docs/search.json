@@ -16,119 +16,119 @@
   {
     "objectID": "posts/DL_Summary2.html",
     "href": "posts/DL_Summary2.html",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "",
     "text": "import torch\nimport matplotlib.pyplot as plt\nfrom fastai.data.all import *\nimport torchvision"
   },
   {
     "objectID": "posts/DL_Summary2.html#예시1-2층-히든레이어는-1층",
     "href": "posts/DL_Summary2.html#예시1-2층-히든레이어는-1층",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "예시1 – 2층 (히든레이어는 1층)",
     "text": "예시1 – 2층 (히든레이어는 1층)\ntorch.nn.Sequential( torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 torch.nn.ReLU(), torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 )"
   },
   {
     "objectID": "posts/DL_Summary2.html#예시2-2층-히든레이어는-1층",
     "href": "posts/DL_Summary2.html#예시2-2층-히든레이어는-1층",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "예시2 – 2층 (히든레이어는 1층)",
     "text": "예시2 – 2층 (히든레이어는 1층)\ntorch.nn.Sequential( torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 torch.nn.ReLU(), torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 torch.nn.Sigmoid(), )"
   },
   {
     "objectID": "posts/DL_Summary2.html#예시3-1층-히든레이어는-없음",
     "href": "posts/DL_Summary2.html#예시3-1층-히든레이어는-없음",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "예시3 – 1층 (히든레이어는 없음!!)",
     "text": "예시3 – 1층 (히든레이어는 없음!!)\ntorch.nn.Sequential( torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 )"
   },
   {
     "objectID": "posts/DL_Summary2.html#예시4-1층-히든레이어는-없음",
     "href": "posts/DL_Summary2.html#예시4-1층-히든레이어는-없음",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "예시4 – 1층 (히든레이어는 없음!!)",
     "text": "예시4 – 1층 (히든레이어는 없음!!)\ntorch.nn.Sequential( torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 torch.nn.Sigmoid() )"
   },
   {
     "objectID": "posts/DL_Summary2.html#예시5-3층-히든레이어는-2층",
     "href": "posts/DL_Summary2.html#예시5-3층-히든레이어는-2층",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "예시5 – 3층 (히든레이어는 2층)",
     "text": "예시5 – 3층 (히든레이어는 2층)\ntorch.nn.Sequential( torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 torch.nn.Sigmoid() torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 torch.nn.Sigmoid() torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층\n)"
   },
   {
     "objectID": "posts/DL_Summary2.html#예시6-3층-히든레이어는-2층",
     "href": "posts/DL_Summary2.html#예시6-3층-히든레이어는-2층",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "예시6 – 3층 (히든레이어는 2층)",
     "text": "예시6 – 3층 (히든레이어는 2층)\ntorch.nn.Sequential( torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 torch.nn.ReLU() torch.nn.Dropout(??) torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층 torch.nn.ReLU() torch.nn.Dropout(??) torch.nn.Linear(??,??), ## &lt;– 학습해야할 가중치가 있는 층\ntorch.nn.Sigmoid() )"
   },
   {
     "objectID": "posts/DL_Summary2.html#a.-xy-데이터를-모두-굳이-gpu에-넘겨야-하는가",
     "href": "posts/DL_Summary2.html#a.-xy-데이터를-모두-굳이-gpu에-넘겨야-하는가",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "A. X,y 데이터를 모두 굳이 GPU에 넘겨야 하는가?",
     "text": "A. X,y 데이터를 모두 굳이 GPU에 넘겨야 하는가?\n데이터셋을 짝홀로 나누어서 번갈아가면서 GPU에 올렸다 내렸다하면 안되나?\n- 아래의 알고리즘을 생각해보자.\n\n데이터를 반으로 나누고\n짝수 obs의 x,y,net의 모든 parameters을 GPU에 올린다\nyhat,loss,grad,update 수행\n홀수 obs의 x,y를 GPU메모리에서 내린다. 그리고 짝수 obs의 x,y를 GPU메모리에 올린다\nyhat,loss,grad,update 수행\n반복"
   },
   {
     "objectID": "posts/DL_Summary2.html#b.-미니배치-경사하강법",
     "href": "posts/DL_Summary2.html#b.-미니배치-경사하강법",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "B. 미니배치 경사하강법",
     "text": "B. 미니배치 경사하강법\n그럼 홀수 짝수로 나누는 건 2로 나누는 건데 굳이 2로만 나누어야하나? 더 쪼갤 수 있지 않나?\n- gradient descent : 10개의 sample data가 있다고 할 때 모든 sample을 이용하여 slope계산\n- stochastic gradient descent with batch size = 1 : 10개의 smaple data를 하나씩으로 모두 쪼개서 slope계산\nstochastic gradient descent with batch size = 1의 경우는 epoc을 10번 하면 총 100번 epoc을 돌리는 것과 같다\n- stochastic gradient descent : m개의 sample을 이용하여 slope 계산\n그럼 stochastic gradient descent의 경우는 epoc을 10번 하면 총 40번 epoc을 돌리는 것과 같다."
   },
   {
     "objectID": "posts/DL_Summary2.html#c.-datasetds-dataloaderdl",
     "href": "posts/DL_Summary2.html#c.-datasetds-dataloaderdl",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "C. Dataset(ds) , DataLoader(dl)",
     "text": "C. Dataset(ds) , DataLoader(dl)\nstochastic gradient descent를 수행하기 위해서 파이토치에서는 ds와 dl라는 오브젝트를 준비했다.\n\nx=torch.tensor(range(10)).float().reshape(-1,1)\ny=torch.tensor([1.0]*5+[0.0]*5).reshape(-1,1)\ntorch.concat([x,y],axis=1)\n\ntensor([[0., 1.],\n        [1., 1.],\n        [2., 1.],\n        [3., 1.],\n        [4., 1.],\n        [5., 0.],\n        [6., 0.],\n        [7., 0.],\n        [8., 0.],\n        [9., 0.]])\n\n\n\nds = torch.utils.data.TensorDataset(x,y)\n\ndir(ds)를 살펴보면 __getitem__이 있다 이러면 섭스크립터블하다는 것이다.\n\nds.tensors # 튜플 언패킹으로 뽑을 수 있을 거 같음\n\n(tensor([[0.],\n         [1.],\n         [2.],\n         [3.],\n         [4.],\n         [5.],\n         [6.],\n         [7.],\n         [8.],\n         [9.]]),\n tensor([[1.],\n         [1.],\n         [1.],\n         [1.],\n         [1.],\n         [0.],\n         [0.],\n         [0.],\n         [0.],\n         [0.]]))\n\n\n\nds[0] , (x,y)[0]\n\n((tensor([0.]), tensor([1.])),\n tensor([[0.],\n         [1.],\n         [2.],\n         [3.],\n         [4.],\n         [5.],\n         [6.],\n         [7.],\n         [8.],\n         [9.]]))\n\n\n그런데 일반적인 튜플의 인덱싱과는 다르게 동작함\n\ndl=torch.utils.data.DataLoader(ds,batch_size=3)\ndl\n\n&lt;torch.utils.data.dataloader.DataLoader at 0x7fb12bf0eb10&gt;\n\n\ndl : 섭스크립터블하지 않지만 이터러블 함 즉, for문을 사용할 수 있음\n\nfor xi,yi in dl:\n    print(xi,yi)\n\ntensor([[0.],\n        [1.],\n        [2.]]) tensor([[1.],\n        [1.],\n        [1.]])\ntensor([[3.],\n        [4.],\n        [5.]]) tensor([[1.],\n        [1.],\n        [0.]])\ntensor([[6.],\n        [7.],\n        [8.]]) tensor([[0.],\n        [0.],\n        [0.]])\ntensor([[9.]]) tensor([[0.]])\n\n\n10을 3으로 나누면 마지막에 하나 남는데 그건 어떻게 해? -&gt; 그냥 하나 남으면 그것만 계산한다"
   },
   {
     "objectID": "posts/DL_Summary2.html#d.-dsdl을-이용한-mnist구현",
     "href": "posts/DL_Summary2.html#d.-dsdl을-이용한-mnist구현",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "D. ds,dl을 이용한 MNIST구현",
     "text": "D. ds,dl을 이용한 MNIST구현\n- 목표 : 확률적경사하강법과 그냥 경사하강법의 성능을 ’동일 반복횟수’로 비교해보자\n- 그냥 경사하강법 - mini-batch쓰지 않는 학습\n\npath = untar_data(URLs.MNIST)\nX0 = torch.stack(([torchvision.io.read_image(str(fname)) for fname in (path/'training/0').ls()]))\nX1 = torch.stack(([torchvision.io.read_image(str(fname)) for fname in (path/'training/1').ls()]))\nX = torch.concat([X0,X1],axis=0).reshape(-1,1*28*28)/255\ny = torch.tensor([0.0]*len(X0) + [1.0]*len(X1)).reshape(-1,1)\n\ntorch.manual_seed(21345)\nnet = torch.nn.Sequential(\n    torch.nn.Linear(1*28*28,32),\n    torch.nn.ReLU(),\n    torch.nn.Linear(32,1),\n    torch.nn.Sigmoid()\n)\n\nloss_fn = torch.nn.BCELoss()\noptimizr = torch.optim.Adam(net.parameters())\n\nfor epoc in range(700):\n    yhat = net(X)\n    loss = loss_fn(yhat,y)\n    loss.backward()\n    optimizr.step()\n    optimizr.zero_grad()\n\n((yhat &gt; 0.5)*1.0 == y).float().mean()\n\ntensor(0.9998)\n\n\n\nplt.plot(y)\nplt.plot(yhat.data,'.')\n\n\n\n\n\n\n\n\n- ‘확률적’ 경사하강법 - mini-batch사용하는 학습\n\nds = torch.utils.data.TensorDataset(X,y)\ndl = torch.utils.data.DataLoader(ds,batch_size=2048)\n\npath = untar_data(URLs.MNIST)\nX0 = torch.stack(([torchvision.io.read_image(str(fname)) for fname in (path/'training/0').ls()]))\nX1 = torch.stack(([torchvision.io.read_image(str(fname)) for fname in (path/'training/1').ls()]))\nX = torch.concat([X0,X1],axis=0).reshape(-1,1*28*28)/255\ny = torch.tensor([0.0]*len(X0) + [1.0]*len(X1)).reshape(-1,1)\n\ntorch.manual_seed(21345)\nnet = torch.nn.Sequential(\n    torch.nn.Linear(1*28*28,32),\n    torch.nn.ReLU(),\n    torch.nn.Linear(32,1),\n    torch.nn.Sigmoid()\n)\n\nloss_fn = torch.nn.BCELoss()\noptimizr = torch.optim.Adam(net.parameters())\n\nfor epoc in range(100):\n    for xi,y1 in dl:\n        yhat = net(X)\n        loss = loss_fn(yhat,y)\n        loss.backward()\n        optimizr.step()\n        optimizr.zero_grad()\n\n((yhat &gt; 0.5)*1.0 == y).float().mean()\n\ntensor(0.9998)\n\n\n\nplt.plot(y)\nplt.plot(yhat.data,'.')\n\n\n\n\n\n\n\n\n- GPU를 활용하는 ‘확률적’ 경사하강법 - 실제로는 이게 최종 알고리즘\n\nds = torch.utils.data.TensorDataset(X,y)\ndl = torch.utils.data.DataLoader(ds,batch_size=2048)\n\npath = untar_data(URLs.MNIST)\nX0 = torch.stack(([torchvision.io.read_image(str(fname)) for fname in (path/'training/0').ls()]))\nX1 = torch.stack(([torchvision.io.read_image(str(fname)) for fname in (path/'training/1').ls()]))\nX = torch.concat([X0,X1],axis=0).reshape(-1,1*28*28)/255\ny = torch.tensor([0.0]*len(X0) + [1.0]*len(X1)).reshape(-1,1)\n\ntorch.manual_seed(21345)\nnet = torch.nn.Sequential(\n    torch.nn.Linear(1*28*28,32),\n    torch.nn.ReLU(),\n    torch.nn.Linear(32,1),\n    torch.nn.Sigmoid()\n).to(\"cuda:0\")\n\nloss_fn = torch.nn.BCELoss()\noptimizr = torch.optim.Adam(net.parameters())\n\nfor epoc in range(100):\n    for xi,yi in dl:\n        loss = loss_fn(net(xi.to(\"cuda:0\")),yi.to(\"cuda:0\"))\n        loss.backward()\n        optimizr.step()\n        optimizr.zero_grad()\n\nnet.to(\"cpu\")\n\n((net(X) &gt; 0.5)*1.0 == y).float().mean()\n\ntensor(0.9992)\n\n\n\nplt.plot(y)\nplt.plot(net(X).data.data,'.')"
   },
   {
     "objectID": "posts/DL_Summary2.html#a.-결론그냥-외워",
     "href": "posts/DL_Summary2.html#a.-결론그냥-외워",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "A. 결론(그냥 외워)",
     "text": "A. 결론(그냥 외워)\n- 2개의 class를 구분하는 게 아니라 k개의 class를 구분해야 한다면?\ny의 형태 : (n,) vector + int형 // (n,k) one-hot encoded matrix + float형\n손실함수 : torch.nn.BCEWithLogitsLoss, -&gt; torch.nn.CrossEntropyLoss\n마지막층의 선형변환 : torch.nn.Linear(?,1) -&gt; torch.nn.Linear(?,k)\n마지막층의 활성화 : NONE -&gt; NONE (손실함수에 이미 포함되어있음)"
   },
   {
     "objectID": "posts/DL_Summary2.html#b.-실습-3개의-클래스를-구분",
     "href": "posts/DL_Summary2.html#b.-실습-3개의-클래스를-구분",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "B. 실습 : 3개의 클래스를 구분",
     "text": "B. 실습 : 3개의 클래스를 구분\n- 1. 통계는 잘하는데 파이토치를 못하는 사람의 코드\n\n## Step1: 데이터준비 \npath = untar_data(URLs.MNIST)\nX0 = torch.stack([torchvision.io.read_image(str(fname)) for fname in (path/'training/0').ls()])\nX1 = torch.stack([torchvision.io.read_image(str(fname)) for fname in (path/'training/1').ls()])\nX2 = torch.stack([torchvision.io.read_image(str(fname)) for fname in (path/'training/2').ls()])\nX = torch.concat([X0,X1,X2]).reshape(-1,1*28*28)/255\ny = torch.nn.functional.one_hot(torch.tensor([0]*len(X0) + [1]*len(X1)+ [2]*len(X2))).float()\n## Step2: 학습가능한 오브젝트 생성\ntorch.manual_seed(43052)\nnet = torch.nn.Sequential(\n    torch.nn.Linear(784,32),\n    torch.nn.ReLU(),\n    torch.nn.Linear(32,3),\n#    torch.nn.Softmax()\n)\nloss_fn = torch.nn.CrossEntropyLoss()\noptimizr = torch.optim.Adam(net.parameters())\n## Step3: 적합 \nfor epoc in range(100):\n    ## step1 \n    netout = net(X)\n    ## step2 \n    loss = loss_fn(netout,y)\n    ## step3 \n    loss.backward()\n    ## step4 \n    optimizr.step()\n    optimizr.zero_grad()\n    \n## Step4: 적합 (혹은 적합결과확인)\n(netout.argmax(axis=1) == y.argmax(axis=1)).float().mean()\n\ntensor(0.9827)\n\n\n- 2. 파이토치를 잘하는 사람의 코드\n\n## Step1: 데이터준비 \npath = untar_data(URLs.MNIST)\nX0 = torch.stack([torchvision.io.read_image(str(fname)) for fname in (path/'training/0').ls()])\nX1 = torch.stack([torchvision.io.read_image(str(fname)) for fname in (path/'training/1').ls()])\nX2 = torch.stack([torchvision.io.read_image(str(fname)) for fname in (path/'training/2').ls()])\nX = torch.concat([X0,X1,X2]).reshape(-1,1*28*28)/255\n#y = torch.nn.functional.one_hot(torch.tensor([0]*len(X0) + [1]*len(X1)+ [2]*len(X2))).float()\ny = torch.tensor([0]*len(X0) + [1]*len(X1)+ [2]*len(X2))\n## Step2: 학습가능한 오브젝트 생성\ntorch.manual_seed(43052)\nnet = torch.nn.Sequential(\n    torch.nn.Linear(784,32),\n    torch.nn.ReLU(),\n    torch.nn.Linear(32,3),\n#    torch.nn.Softmax()\n)\nloss_fn = torch.nn.CrossEntropyLoss()\noptimizr = torch.optim.Adam(net.parameters())\n## Step3: 적합 \nfor epoc in range(100):\n    ## step1 \n    netout = net(X)\n    ## step2 \n    loss = loss_fn(netout,y)\n    ## step3 \n    loss.backward()\n    ## step4 \n    optimizr.step()\n    optimizr.zero_grad()\n## Step4: 적합 (혹은 적합결과확인)    \n(netout.argmax(axis=1) == y).float().mean()\n\ntensor(0.9827)\n\n\n파이토치에서 CrossEntropyLoss를 사용하면 one-hot 인코딩을 해준다. float형도 자동으로 맞춰줌"
   },
   {
     "objectID": "posts/DL_Summary2.html#c.-softmax",
     "href": "posts/DL_Summary2.html#c.-softmax",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "C. Softmax",
     "text": "C. Softmax\n\nnet(X)\n\ntensor([[ 5.3554, -6.5855, -1.3154],\n        [ 3.2968, -4.6176, -1.0703],\n        [ 3.6498, -5.2716, -0.0403],\n        ...,\n        [-2.0524, -2.4955,  5.2198],\n        [-1.7430, -4.0844,  5.5187],\n        [-0.9800, -3.7222,  4.6707]], grad_fn=&lt;AddmmBackward0&gt;)\n\n\nSoftmax는 숫자 하나하나에 접근해서 Sigmoid를 취해주는 것"
   },
   {
     "objectID": "posts/DL_Summary2.html#d.정리",
     "href": "posts/DL_Summary2.html#d.정리",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "D.정리",
     "text": "D.정리\n- 결론\n\n소프트맥스는 시그모이드의 확장이다.\n클래스의 수가 2개일 경우에는 (Sigmoid, BCEloss) 조합을 사용해야 하고 클래스의 수가 2개보다 클 경우에는 (Softmax, CrossEntropyLoss) 를 사용해야 한다.\n\n- 그런데 사실.. 클래스의 수가 2개일 경우일때 (Softmax, CrossEntropyLoss)를 사용해도 그렇게 큰일나는것은 아니다. (그냥 좀 비효율적인 느낌이 드는 것 뿐임. 흑백이미지를 칼라잉크로 출력하는 느낌)"
   },
   {
     "objectID": "posts/DL_Summary2.html#b.-torch.nn.relu",
     "href": "posts/DL_Summary2.html#b.-torch.nn.relu",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "B. torch.nn.ReLU()",
     "text": "B. torch.nn.ReLU()\n\na1 = torch.nn.ReLU()\n_X = torch.randn(25).reshape(1,1,5,5)\n_X,a1(_X)\n\n(tensor([[[[ 0.6092, -0.4852,  0.4315,  0.3735, -1.0661],\n           [-0.0087, -0.8282,  0.5311,  1.3330,  1.6749],\n           [ 0.0381, -0.7604, -0.0393, -0.0930, -0.2515],\n           [-1.4267,  0.7906,  2.4239, -0.7960, -0.0814],\n           [ 0.2651,  0.7082, -0.0816, -1.0088, -0.9553]]]]),\n tensor([[[[0.6092, 0.0000, 0.4315, 0.3735, 0.0000],\n           [0.0000, 0.0000, 0.5311, 1.3330, 1.6749],\n           [0.0381, 0.0000, 0.0000, 0.0000, 0.0000],\n           [0.0000, 0.7906, 2.4239, 0.0000, 0.0000],\n           [0.2651, 0.7082, 0.0000, 0.0000, 0.0000]]]]))\n\n\n음수인 수를 다 0으로 만든다"
   },
   {
     "objectID": "posts/DL_Summary2.html#c.-torch.nn.maxpood2d",
     "href": "posts/DL_Summary2.html#c.-torch.nn.maxpood2d",
-    "title": "1. Imports",
+    "title": "DL2024 4wk-5wk",
     "section": "C. torch.nn.MaxPood2d",
     "text": "C. torch.nn.MaxPood2d\n\nm1 = torch.nn.MaxPool2d((2,2))\n_X = torch.randn(25).reshape(1,1,5,5)\n_X,m1(_X)\n\n(tensor([[[[-0.1029, -0.7286,  0.9365,  0.4678,  0.6776],\n           [-0.7395, -0.7937,  0.8509, -0.1291,  2.2427],\n           [ 0.7738, -0.4895,  0.8041,  1.4233,  0.5733],\n           [ 0.7792, -0.4096, -1.5089,  0.3478,  1.1201],\n           [ 1.2056,  0.1269, -1.3804, -0.4759,  2.2051]]]]),\n tensor([[[[-0.1029,  0.9365],\n           [ 0.7792,  1.4233]]]]))\n\n\nfeature들을 요약하는 느낌"
   },
@@ -137,6 +137,6 @@
     "href": "index.html",
     "title": ".",
     "section": "",
-    "text": "1. Imports\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDL2024 2wk-4wk\n\n\n\n\n\n\n\n\n\n\n\nApr 8, 2024\n\n\n차상진\n\n\n\n\n\n\nNo matching items"
+    "text": "DL2024 4wk-5wk\n\n\n\n\n\n\n\n\n\n\n\nApr 9, 2024\n\n\n차상진\n\n\n\n\n\n\n\n\n\n\n\n\nDL2024 2wk-4wk\n\n\n\n\n\n\n\n\n\n\n\nApr 8, 2024\n\n\n차상진\n\n\n\n\n\n\nNo matching items"
   }
 ]
