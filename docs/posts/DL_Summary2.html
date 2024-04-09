@@ -585,7 +585,7 @@ tensor([[9.]]) tensor([[0.]])</code></pre>
 </div>
 </div>
 <p><code>-</code> ‘확률적’ 경사하강법 - mini-batch사용하는 학습</p>
-<div id="7363581a-435f-4227-9cd2-e239c9806552" class="cell" data-execution_count="10">
+<div id="7363581a-435f-4227-9cd2-e239c9806552" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> torch.utils.data.TensorDataset(X,y)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> torch.utils.data.DataLoader(ds,batch_size<span class="op">=</span><span class="dv">2048</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -608,15 +608,15 @@ tensor([[9.]]) tensor([[0.]])</code></pre>
 <span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoc <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
 <span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> xi,yi <span class="kw">in</span> dl:</span>
-<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># netout = net(xi)</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>        netout <span class="op">=</span> net(xi)</span>
 <span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>        loss <span class="op">=</span> loss_fn(netout,yi)</span>
 <span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>        loss.backward()</span>
 <span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>        optimizr.step()</span>
 <span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>        optimizr.zero_grad()</span>
 <span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>((net(X) <span class="op">&gt;</span> <span class="fl">0.5</span>)<span class="op">*</span><span class="fl">1.0</span> <span class="op">==</span> y).<span class="bu">float</span>().mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>NameError: name 'X' is not defined</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>tensor(0.9992)</code></pre>
 </div>
 </div>
 <div id="6727c45f-1f5e-453e-b0ce-fc3fc83bb89d" class="cell" data-execution_count="123">
@@ -631,7 +631,7 @@ tensor([[9.]]) tensor([[0.]])</code></pre>
 </div>
 </div>
 <p><code>-</code> GPU를 활용하는 ‘확률적’ 경사하강법 - 실제로는 이게 최종 알고리즘</p>
-<div id="52fcfb58-e20a-4acb-a48b-17ab63f2bd4f" class="cell" data-execution_count="129">
+<div id="52fcfb58-e20a-4acb-a48b-17ab63f2bd4f" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>ds <span class="op">=</span> torch.utils.data.TensorDataset(X,y)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> torch.utils.data.DataLoader(ds,batch_size<span class="op">=</span><span class="dv">2048</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -662,7 +662,7 @@ tensor([[9.]]) tensor([[0.]])</code></pre>
 <span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>net.to(<span class="st">"cpu"</span>)</span>
 <span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>((net(X) <span class="op">&gt;</span> <span class="fl">0.5</span>)<span class="op">*</span><span class="fl">1.0</span> <span class="op">==</span> y).<span class="bu">float</span>().mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="129">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>tensor(0.9992)</code></pre>
 </div>
 </div>
@@ -1044,25 +1044,6 @@ tensor([[9.]]) tensor([[0.]])</code></pre>
 <p><img src="DL_Summary2_files/figure-html/cell-44-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-</div>
-</div>
-<div id="515878e4-dd43-47f7-8f99-b36339b6e1a3" class="cell" data-execution_count="186">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>quarto render </span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git add .</span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git commit <span class="op">-</span>m .</span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[main ff687c7] .
- 6 files changed, 3507 insertions(+), 77 deletions(-)
- delete mode 100644 docs/posts/.ipynb_checkpoints/Untitled-checkpoint.ipynb
- delete mode 100644 docs/posts/Untitled.ipynb
-To https://github.com/snagjincha/sangjin.git
- ! [rejected]        main -&gt; main (non-fast-forward)
-error: failed to push some refs to 'https://github.com/snagjincha/sangjin.git'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. Integrate the remote changes (e.g.
-hint: 'git pull ...') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.</code></pre>
 </div>
 </div>
 
