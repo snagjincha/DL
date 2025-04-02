@@ -1,4 +1,4 @@
 # Deep Learning
-**This is a space to organize what you have learned while taking deep learning in the first semester of the 2024 school year.**
+**This is a repository where the DL contents studied are organized and posted on a blog.**
 
-https://snagjincha.github.io/DL2024/
+https://snagjincha.github.io/DL/
