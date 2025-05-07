@@ -2,15 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/순환신경망_정리.html",
+      "/posts/RNN.html",
       "/posts/RL1.html",
       "/posts/About_hidden_size.html",
       "/posts/DL_Summary7.html",
       "/posts/DL_Summary6.html",
       "/posts/DL_Summary5.html",
       "/posts/DL_Summary4.html",
-      "/posts/DL_Summary3.html",
-      "/posts/DL_Summary2.html",
+      "/posts/MNIST_CIFAR10.html",
+      "/posts/SGD.html",
       "/posts/Predict_Underlying.html"
     ]
   }
